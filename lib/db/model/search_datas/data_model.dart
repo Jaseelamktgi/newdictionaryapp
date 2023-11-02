@@ -24,4 +24,6 @@ class DictionaryModel{
     required this.partOfSpeech,
     required this.malayalamDefinition,
   });
+
+  static where(bool Function(dynamic entry) param0) {}
 }

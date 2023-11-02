@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:newdictionaryapp/db/functions/db_functions.dart';
+import 'package:newdictionaryapp/db/functions/db_function.dart';
 import 'package:newdictionaryapp/db/model/search_datas/data_model.dart';
 import 'package:newdictionaryapp/screen/home_screen.dart';
 
@@ -12,7 +12,7 @@ Future<void> main() async {
   //_____initialise hive______
   await Hive.initFlutter();
 
-  //_____register all type adpters_____
+  //_____register all type adapters_____
   if (!Hive.isAdapterRegistered(DictionaryModelAdapter().typeId)) {
     Hive.registerAdapter(DictionaryModelAdapter());
   }

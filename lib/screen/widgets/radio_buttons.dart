@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:newdictionaryapp/screen/widgets/getx.dart';
 
 class RadioButton extends StatefulWidget {
   const RadioButton({super.key});
@@ -17,6 +19,8 @@ class _RadioButtonState extends State<RadioButton> {
 
   @override
   Widget build(BuildContext context) {
+    final ColorController colorController = Get.put(ColorController());
+
     return Column(
       children: [
         Row(
@@ -26,18 +30,27 @@ class _RadioButtonState extends State<RadioButton> {
               value: 0,
               groupValue: selectedValue,
               onChanged: RadioValueChange,
+              activeColor: colorController.selectedIndex.value == 0
+                  ? Color.fromARGB(255, 59, 156, 236)
+                  : Colors.black,
             ),
             Text('StartWith'),
             Radio(
               value: 1,
               groupValue: selectedValue,
               onChanged: RadioValueChange,
+              activeColor: colorController.selectedIndex.value == 0
+                  ? Color.fromARGB(255, 59, 156, 236)
+                  : Colors.black,
             ),
             Text('Contains'),
             Radio(
               value: 2,
               groupValue: selectedValue,
               onChanged: RadioValueChange,
+              activeColor: colorController.selectedIndex.value == 0
+                  ? Color.fromARGB(255, 59, 156, 236)
+                  : Colors.black,
             ),
             Text('EndWith'),
           ],

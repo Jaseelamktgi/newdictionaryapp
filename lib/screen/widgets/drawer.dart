@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:newdictionaryapp/screen/widgets/getx.dart';
 
 class DrawerWidget extends StatefulWidget {
   const DrawerWidget({super.key});
@@ -8,16 +10,23 @@ class DrawerWidget extends StatefulWidget {
 }
 
 class _DrawerWidgetState extends State<DrawerWidget> {
+  final ColorController colorController = Get.put(ColorController());
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
         children: [
           DrawerHeader(
-            decoration: BoxDecoration(color: Color.fromARGB(255, 59, 156, 236)),
+            decoration: BoxDecoration(
+                color: colorController.selectedIndex.value == 0
+                    ? Color.fromARGB(255, 59, 156, 236)
+                    : Colors.black),
             child: Center(
               child: Text(
-                'English <-> മലയാളം Dictionary ',
+                colorController.selectedIndex.value == 0
+                    ? 'English <-> മലയാളം Dictionary '
+                    : 'മലയാളം <-> English Dictionary',
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
