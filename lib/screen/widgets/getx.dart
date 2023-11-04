@@ -8,7 +8,7 @@ class ColorController extends GetxController {
   RxList searchList = [].obs;
 
   void setIndex(int index) {
-    selectedIndex.value = index;
+    selectedIndex.value = 0;
   }
 
 }

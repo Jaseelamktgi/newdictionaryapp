@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:newdictionaryapp/db/functions/db_function.dart';
 import 'package:newdictionaryapp/db/model/search_datas/data_model.dart';
+import 'package:newdictionaryapp/screen/eng_screen.dart';
 import 'package:newdictionaryapp/screen/home_screen.dart';
 
 Future<void> main() async {
@@ -31,14 +33,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 31, 175, 227)),
-        useMaterial3: true,
-      ),
-      home: HomeScreen(),
+      home: EngLishToMalaScreen(),
     );
   }
 }
